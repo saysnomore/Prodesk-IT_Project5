@@ -1,0 +1,169 @@
+.task-card {
+  position: relative;
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: start;
+  gap: 0 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-line);
+  border-radius: 2px;
+  padding: 12px 12px 12px 22px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 22px,
+    var(--card-line) 22px,
+    var(--card-line) 23px
+  );
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+/* the red vertical rule of a real index / ledger card */
+.task-card::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--margin-red);
+  opacity: 0.55;
+}
+
+.task-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.task-card--high {
+  border-left: 3px solid var(--priority-high);
+}
+.task-card--medium {
+  border-left: 3px solid var(--priority-med);
+}
+.task-card--low {
+  border-left: 3px solid var(--priority-low);
+}
+
+.task-card__drag-handle {
+  grid-row: 1 / 3;
+  cursor: grab;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1;
+  padding: 2px 4px;
+  user-select: none;
+  touch-action: none;
+}
+.task-card__drag-handle:active {
+  cursor: grabbing;
+}
+
+.task-card__stamp {
+  justify-self: start;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  padding: 2px 8px;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+  transform: rotate(-6deg);
+  margin-top: 1px;
+  mix-blend-mode: multiply;
+  white-space: nowrap;
+}
+.task-card__stamp--high {
+  color: var(--priority-high);
+}
+.task-card__stamp--medium {
+  color: var(--priority-med);
+}
+.task-card__stamp--low {
+  color: var(--priority-low);
+}
+
+.task-card__body {
+  min-width: 0;
+  grid-column: 3;
+}
+
+.task-card__text {
+  all: unset;
+  display: block;
+  cursor: text;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+  word-break: break-word;
+  padding: 2px 0;
+  width: 100%;
+}
+.task-card__text:hover {
+  text-decoration: underline dotted var(--ink-soft);
+  text-underline-offset: 3px;
+}
+
+.task-card__edit-input {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--progress-accent);
+  border-radius: 2px;
+  padding: 3px 6px;
+}
+
+.task-card__controls {
+  grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.task-card__move-group {
+  display: flex;
+  gap: 4px;
+}
+
+.task-card__move-btn {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 1px solid var(--card-line);
+  border-radius: 2px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+.task-card__move-btn:hover:not(:disabled) {
+  border-color: var(--ink-soft);
+  color: var(--ink);
+}
+.task-card__move-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.task-card__delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--margin-red);
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 2px 4px;
+  opacity: 0.7;
+}
+.task-card__delete-btn:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

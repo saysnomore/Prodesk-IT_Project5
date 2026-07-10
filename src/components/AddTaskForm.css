@@ -1,0 +1,60 @@
+.add-task {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--paper-line);
+  border-radius: 3px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.add-task__label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+.add-task__row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.add-task__input {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--card-line);
+  border-radius: 2px;
+  background: var(--card-bg);
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.add-task__priority {
+  padding: 9px 10px;
+  border: 1px solid var(--card-line);
+  border-radius: 2px;
+  background: var(--card-bg);
+  color: var(--ink);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-task__submit {
+  padding: 9px 16px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  background: var(--ink);
+  color: var(--card-bg);
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+.add-task__submit:hover {
+  background: var(--progress-accent);
+  border-color: var(--progress-accent);
+}

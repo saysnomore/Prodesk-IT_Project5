@@ -1,0 +1,96 @@
+/* ============================================================
+   SHIFT BOARD — design tokens
+   Concept: a foreman's task log rendered as index cards.
+   Display face: Special Elite (typewriter) — for titles & stamps.
+   Utility face:  IBM Plex Mono — for task text, meta, controls.
+   ============================================================ */
+
+:root {
+  --paper: #efe8d8;
+  --paper-line: #d9cca8;
+  --margin-red: #b6493f;
+  --ink: #2a241c;
+  --ink-soft: #766b57;
+  --card-bg: #faf5e8;
+  --card-line: #e3d7b8;
+
+  --todo-accent: #7d7259;
+  --progress-accent: #33607d;
+  --done-accent: #4a7548;
+
+  --priority-high: #b6493f;
+  --priority-med: #b6862f;
+  --priority-low: #4a7548;
+
+  --shadow-sm: 0 1px 2px rgba(42, 36, 28, 0.18);
+  --shadow-md: 0 4px 10px rgba(42, 36, 28, 0.22);
+  --shadow-lift: 0 12px 24px rgba(42, 36, 28, 0.3);
+
+  --font-display: "Special Elite", "Courier New", monospace;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-mono);
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--paper-line) 0px,
+    var(--paper-line) 1px,
+    transparent 1px,
+    transparent 34px
+  );
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--margin-red);
+  color: var(--card-bg);
+}
+
+/* visible keyboard focus everywhere, per accessibility floor */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--progress-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

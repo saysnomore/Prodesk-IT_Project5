@@ -1,0 +1,42 @@
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+.search-bar__icon {
+  position: absolute;
+  left: 10px;
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+
+.search-bar__input {
+  width: 100%;
+  padding: 8px 30px 8px 30px;
+  border: 1px solid var(--card-line);
+  border-radius: 2px;
+  background: var(--card-bg);
+  color: var(--ink);
+  font-size: 13px;
+}
+.search-bar__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-bar__clear {
+  position: absolute;
+  right: 6px;
+  background: transparent;
+  border: none;
+  color: var(--ink-soft);
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 6px;
+}
+.search-bar__clear:hover {
+  color: var(--margin-red);
+}
